@@ -69,4 +69,4 @@ Estudiantes, Vecinos, Municipio | Disponibilidad del material. | El stock de la 
 5. Las interfaces deben estar diseñadas acorde a la guía para el diseño de interfaces web institucionales, disponible en la página de La División de Gobierno Digital.
 6. El proyecto esta sujeto a los mandatos legales de las leyes 19.628 y 21.131.
 ## **Diagrama de motivaciones**
-
+![alt text](diagramaMotivaciones.drawio.png)
