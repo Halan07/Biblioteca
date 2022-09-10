@@ -14,7 +14,7 @@ Los objetivos del proyecto son:
 1. Automatizar el sistema de registro y pedidos de la BEC; Dando así un servicio mas veloz eliminando los bien llamados choke points, para lograr atender a mas gente en menos tiempo, logrando abarcar a mayor cantidad de gente de la comuna.
 2. El proyecto debe ser poder seguir funcionando teniendo en cuenta el volumen de datos que se tienen y soportando las tasa de crecimiento previstas.
 3. Soportar una gran cantidad de solicitudes sin que se vaya el servicio, teniendo en cuenta la tasa de crecimiento.
-4.
+
 
 
 ## **Stakeholders**
@@ -44,22 +44,22 @@ Estudiantes, Vecinos, Municipio | Disponibilidad del material. | El stock de la 
 
 1. Se debe poder ver la disponibilidad del material en el sistema.
 2. 1 vez al mes se envié por correo una encuesta de satisfacción
-3. Utilizar metodologías agiles para trabajar.
+3. El sistema será capaz de seguir funcionando sin conectividad a Internet, solo en las dependencias de la biblioteca
 4. Los usuarios podrán realizar pedidos online y confirmarlos en el mesón.
 5. En el primer inicio de sesión del usuario debe desplegar un tutorial de como utilizar al app.
 6. La interfaz debe tener un logo  que indique el soporte.
 7. El stock de la biblioteca debe estar disponible online, no así el componente de pedidos.
-
+8. En caso de corte del suministro eléctrico se podrá realizar prestamos de forma manual, como se hacia antes de la implementación del sistema.
 
 ## **Requisitos no funcionales**
 
 1. El tiempo de respuesta en las dependencias debe ser de 1s, estando remoto no debe superar los 3s.
-2. El sistema será capaz de seguir funcionando sin conectividad a Internet, solo en las dependencias de la biblioteca
-3. En caso de corte del suministro eléctrico se podrá realizar prestamos de forma manual, como se hacia antes de la implementación del sistema.
+2. Utilizar metodologías agiles para trabajar.
+3. Los datos deben estar protegidos de acuerdo a la ley 19.628.
 4. El sistema debe contar con escalabilidad en la capacidad.
 5. Crear canales de comunicación de confianza con los clientes.
 6. Los datos deben ser auditables tal como dice la ley 21.131.
-7. Los datos deben estar protegidos de acuerdo a la ley 19.628.
+
 
 ## **Restricciones**
 1. Al haber una gran cantidad de material el hardware de seguridad debe ser económico para utilizarlo en masa.
