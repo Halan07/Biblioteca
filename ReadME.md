@@ -73,39 +73,83 @@ Estudiantes, Vecinos, Municipio | Disponibilidad del material. | El stock de la 
 
 ## **Documentar Metadatos**
 
-material:
-- id_material(pk) 
-- titulo 
-- autor 
-- anyo
-- fecha_ingreso 
-- categoria 
-- tipo
 
-catalogo:
-- id_catalogo(pk)
-- id_material(fk) 
-- id_filtro(fk)
-- nombre
-- fecha_creacion
-
-solicitud-prestamo: 
-- id_solicitud(pk) 
-- id_material(fk) 
-- id_usuario(fk)
-- fecha_solicitud
-- hora_solicitud
 
 usuario:
-- id_usuario(pk) 
-- rut(pk) 
-- nombres
-- apellidos
-- direccion
-- teléfono
-- activo
-- huella
-- foto
+- id_usuario:
+	indice: (pk)
+	descripcion: identificacion usuario
+	variabilidad: dato privado
+	tipo:NUM
+	validacion:
+	valores aceptables:
+	volumen esperado:
+
+- rut: 
+	descripcion:rutificador usuario
+	variabilidad:dato privado unico
+	tipo:NUM
+
+- nombres: 
+	descripcion:nombre usuario
+	tipo:STRING
+
+- apellido_p: 
+	descripcion:apellido paterno usuario
+	tipo:STRING
+
+- apellido_m: 
+	descripcion:apellido materno usuario
+	tipo:STRING
+
+- direccion: 
+	descripcion:direccion usuario
+	tipo:STRING
+
+- teléfono: 
+	descripcion:fono usuario
+	variabilidad:dato privado unico
+ 	tipo:NUM
+
+- activo: 
+	descripcion:actividad usuario
+	tipo:BOOL
+
+- huella: 
+	descripcion:huella corroboracion usuario
+	tipo:DATO BIOMETRICO
+
+- foto: 
+	descripcion:imagen corroboracion usuario
+	tipo:IMAGEN
+
+material:
+- id_material(pk): identificacion material, dato privado, NUM
+- titulo: titulo material, STRING
+- autor: autor material, STRING
+- anyo: fecha creacion material, DATE
+- fecha_ingreso: fecha ingreso material, DATE
+- categoria: categoria material, STRING
+- tipo: tipo material, STRING
+
+catalogo:
+- id_catalogo(pk): identificacion catalogo, dato privado, NUM
+- id_material(fk): identificacion material, dato foraneo, NUM
+- id_filtro(fk): identificacion filtro, dato foraneo, NUM
+- nombre: nombre catalogo, STRING
+- fecha_creacion: fecha creacion catalogo, DATE
+
+solicitud-prestamo:
+- id_solicitud(pk): identificacion solicitud prestamo, dato privado, NUM
+- id_material(fk): identificacion material, dato foraneo, NUM
+- id_usuario(fk):identificacion usuario, dato foraneo, NUM
+- fecha_solicitud: fecha solicitud prestamo, DATE
+- hora_solicitud: hora solicitud prestamo, TIME
+
+
+
+
+
 
 
 
