@@ -70,3 +70,47 @@ Estudiantes, Vecinos, Municipio | Disponibilidad del material. | El stock de la 
 6. El proyecto esta sujeto a los mandatos legales de las leyes 19.628 y 21.131.
 ## **Diagrama de motivaciones**
 ![alt text](diagramaMotivaciones.drawio.png)
+
+## **Documentar Metadatos**
+
+material:
+- id_material(pk) 
+- titulo 
+- autor 
+- anyo
+- fecha_ingreso 
+- categoria 
+- tipo
+
+catalogo:
+- id_catalogo(pk)
+- id_material(fk) 
+- id_filtro(fk)
+- nombre
+- fecha_creacion
+
+solicitud-prestamo: 
+- id_solicitud(pk) 
+- id_material(fk) 
+- id_usuario(fk)
+- fecha_solicitud
+- hora_solicitud
+
+usuario:
+- id_usuario(pk) 
+- rut(pk) 
+- nombres
+- apellidos
+- direccion
+- teléfono
+- activo
+- huella
+- foto
+
+
+
+
+
+
+
+
