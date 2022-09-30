@@ -12,7 +12,7 @@
 			<huella> </huella>
 			<foto> </foto>
 		</usuario>
-        <material>
+        	<material>
 			<id_material></id_material>
 			<titulo></titulo>
 			<autor></autor>
