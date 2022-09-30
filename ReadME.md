@@ -146,8 +146,9 @@ solicitud-prestamo:
 - fecha_solicitud: fecha solicitud prestamo, DATE
 - hora_solicitud: hora solicitud prestamo, TIME
 
+## **XML:**
 
-[codigo xml](https://github.com/Halan07/Biblioteca/blob/main/BIBLIOTECA.XML)
+[CODIGO](https://github.com/Halan07/Biblioteca/blob/main/BIBLIOTECA.XML)
 
 
 
