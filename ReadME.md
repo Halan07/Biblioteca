@@ -147,7 +147,7 @@ solicitud-prestamo:
 - hora_solicitud: hora solicitud prestamo, TIME
 
 
-![text](BIBLIOTECA.XML)
+[codigo xml](Biblioteca/BIBLIOTECA.XML)
 
 
 
