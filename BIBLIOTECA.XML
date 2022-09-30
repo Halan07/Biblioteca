@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<biblioteca>
+		<usuario>
+			<id_usuario> </id_usuario>
+			<rut> </rut>
+			<nombre> </nombre>
+			<apellido_p> </apellido_p>
+			<apellido_m> </apellido_m>
+			<direccion> </direccion>
+			<telefono> </telefono>
+			<activo> </activo>
+			<huella> </huella>
+			<foto> </foto>
+		</usuario>
+        <material>
+			<id_material></id_material>
+			<titulo></titulo>
+			<autor></autor>
+			<anyo></anyo>
+			<fecha_ingreso></fecha_ingreso>
+			<categoria></categoria>
+			<tipo></tipo>
+		</material>    
+		<catalogo>
+			<id_catalogo></id_catalogo>
+		<!-- <id_material></id_material-->
+		<!-- <id_filtro></id_filtro-->
+			<nombre></nombre>
+			<fecha_creacion></fecha_creacion>
+		</catalogo>
+
+		<solicitud_prestamo>
+			<id_solicitud></id_solicitud>
+		<!-- <id_material></id_material-->
+		<!-- <id_usuario></id_usuario-->
+			<fecha_solicitud></fecha_solicitud>
+			<hora_solicitud></hora_solicitud>
+
+		</solicitud_prestamo>
+
+	</biblioteca>
