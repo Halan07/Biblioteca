@@ -90,7 +90,7 @@ usuario:
 	variabilidad:dato privado unico
 	tipo:NUM
 
-- nombres: 
+- nombre: 
 	descripcion:nombre usuario
 	tipo:STRING
 
@@ -147,7 +147,7 @@ solicitud-prestamo:
 - hora_solicitud: hora solicitud prestamo, TIME
 
 
-
+![alt text](BIBLIOTECA.XML)
 
 
 
