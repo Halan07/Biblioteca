@@ -23,16 +23,16 @@
 		</material>    
 		<catalogo>
 			<id_catalogo></id_catalogo>
-		<!-- <id_material></id_material-->
-		<!-- <id_filtro></id_filtro-->
+			<id_material></id_material><!-- FORANEA -->
+			<id_filtro></id_filtro><!-- FORANEA -->
 			<nombre></nombre>
 			<fecha_creacion></fecha_creacion>
 		</catalogo>
 
 		<solicitud_prestamo>
 			<id_solicitud></id_solicitud>
-		<!-- <id_material></id_material-->
-		<!-- <id_usuario></id_usuario-->
+			<id_material></id_material><!-- FORANEA -->
+			<id_usuario></id_usuario><!-- FORANEA -->
 			<fecha_solicitud></fecha_solicitud>
 			<hora_solicitud></hora_solicitud>
 
