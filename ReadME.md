@@ -280,7 +280,35 @@ solicitud-prestamo:
 [CODIGO](https://github.com/Halan07/Biblioteca/blob/main/BIBLIOTECA.XML)
 
 
+## **Servicios SOA**
 
+ Contrato:
+
+      entradas:
+                -    Identificacion usuario solicitante.
+                -    Identificacion material solicitado.
+                -    Fecha del momento.
+
+            salidas:
+                -    Identificacion solicitud de prestamo.
+                -    Fecha entrega material.
+                -    Fecha creación solicitud.
+
+            binding:
+                -    El usuario ingresa por medio de una GUI
+                el material que solicita. Se toma registro de su
+                identificador unico, el identificador unico del
+                material solicitado y la fecha del momento, con
+                estos datos se genera una solicitud de material,
+                que contiene los elementos necesarios para que
+                el bibliotecario pueda saber que el material
+                especificado ha sido reservado.
+
+                -    Es necesario notificar al usuario si la
+                transaccion ha sido exitosa, de no serlo debe 
+                señalarse el motivo, para que este pueda
+                intentarlo nuevamente.
+                -    La prioridad de este servicio es alta.
 
 
 
