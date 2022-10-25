@@ -274,7 +274,13 @@ solicitud-prestamo:
 	-	validacion: Data type check
 	-	valores aceptables: Largo de 30 caracteres máximo
 	-	volumen esperado: 30 bytes
-
+-	hora_solicitud:
+	-	descripcion:hora en la que se realizo la solicitud
+	-	variabilidad: dato privado
+	-	tipo: DATE
+	-	validacion: Data type check
+	-	valores aceptables: Largo de 30 caracteres máximo
+	-	volumen esperado: 30 bytes
 
 
 
