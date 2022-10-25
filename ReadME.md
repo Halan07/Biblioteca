@@ -77,74 +77,202 @@ Estudiantes, Vecinos, Municipio | Disponibilidad del material. | El stock de la 
 
 usuario:
 - id_usuario:
-	indice: (pk)
-	descripcion: identificacion usuario
-	variabilidad: dato privado
-	tipo:NUM
-	validacion:
-	valores aceptables:
-	volumen esperado:
+	-	indice: (pk)
+	-	descripcion: identificacion usuario
+	-	variabilidad: dato privado
+	-	tipo:NUM
+	-	validacion:
+	-	valores aceptables:>0
+	-	volumen esperado:24 bytes
 
 - rut: 
-	descripcion:rutificador usuario
-	variabilidad:dato privado unico
-	tipo:NUM
+	-	descripcion:rutificador usuario
+	-	variabilidad:dato privado unico
+	-	tipo:NUM
+	-	validacion:
+	-	valores aceptables:>0
+	-	volumen esperado:30 bytes
 
 - nombre: 
-	descripcion:nombre usuario
-	tipo:STRING
+	-	descripcion:nombre usuario
+	-	variabilidad: dato publico
+	-	tipo:STRING
+	-	validacion:
+	-	valores aceptables: <40 caracteres
+	-	volumen esperado:40 bytes
 
 - apellido_p: 
-	descripcion:apellido paterno usuario
-	tipo:STRING
+	-	descripcion:apellido paterno usuario
+	-	variabilidad: dato privado
+	-	tipo:STRING
+	-	validacion:
+	-	valores aceptables:<40 caracteres
+	-	volumen esperado:40 bytes
 
 - apellido_m: 
-	descripcion:apellido materno usuario
-	tipo:STRING
+	-	descripcion:apellido materno usuario
+	-	variabilidad: dato privado
+	-	tipo:STRING
+	-	validacion:
+	-	valores aceptables:<40 caracteres
+	-	volumen esperado:40 bytes
 
 - direccion: 
-	descripcion:direccion usuario
-	tipo:STRING
+	-	descripcion:direccion usuario
+	-	variabilidad: dato privado
+	-	tipo:STRING
+	-	validacion:
+	-	valores aceptables:<100 caracteres
+	-	volumen esperado:30 bytes
 
 - teléfono: 
-	descripcion:fono usuario
-	variabilidad:dato privado unico
- 	tipo:NUM
+	-	descripcion:fono usuario
+	-	variabilidad: dato privado
+	-	variabilidad:dato privado unico
+ 	-	tipo:NUM
+ 	-	validacion:
+	-	valores aceptables:>0
+	-	volumen esperado:10 bytes
 
 - activo: 
-	descripcion:actividad usuario
-	tipo:BOOL
+	-	descripcion:actividad usuario
+	-	variabilidad: dato publico
+	-	tipo:BOOL
+	-	validacion:
+	-	valores aceptables:>0
+	-	volumen esperado:2 bytes
 
 - huella: 
-	descripcion:huella corroboracion usuario
-	tipo:DATO BIOMETRICO
+	-	descripcion:huella corroboracion usuario
+	-	variabilidad: dato privado
+	-	tipo:DATO BIOMETRICO
+	-	validacion:
+	-	valores aceptables:>0
+	-	volumen esperado:30 bytes
 
-- foto: 
-	descripcion:imagen corroboracion usuario
-	tipo:IMAGEN
 
 material:
-- id_material(pk): identificacion material, dato privado, NUM
-- titulo: titulo material, STRING
-- autor: autor material, STRING
+- id_material(pk):
+	-	indice: (pk)
+	-	descripcion: identificacion material
+	-	variabilidad: dato privado
+	-	tipo:NUM
+	-	validacion:
+	-	valores aceptables:>0
+	-	volumen esperado:24 bytes
+	
+- titulo:
+	-	descripcion: titulo material
+	-	variabilidad: dato publico
+	-	tipo:STRING
+	-	validacion:
+	-	valores aceptables:<30 caracteres
+	-	volumen esperado:30 bytes
+	
+- autor: 
+	- 	descripcion: autor material
+	-	variabilidad: dato publico
+	-	tipo:STRING
+	-	validacion:
+	-	valores aceptables:<20 caracteres
+	-	volumen esperado:20 bytes
+
 - anyo: fecha creacion material, DATE
+	-	descripcion: fecha creacion material
+	-	variabilidad: dato publico
+	-	tipo:DATE
+	-	validacion:
+	-	valores aceptables:fecha unica
+	-	volumen esperado:30 bytes
+	
 - fecha_ingreso: fecha ingreso material, DATE
+	-	descripcion: fecha ingreso material
+	-	variabilidad: dato publico
+	-	tipo:DATE
+	-	validacion:
+	-	valores aceptables:fecha unica
+	-	volumen esperado:30 bytes
+	
 - categoria: categoria material, STRING
+	- 	descripcion: categoria material
+	-	variabilidad: dato publico
+	-	tipo:STRING
+	-	validacion:
+	-	valores aceptables:<30 caracteres
+	-	volumen esperado:30 bytes
+	
 - tipo: tipo material, STRING
+	-	descripcion: tipo material
+	-	variabilidad: dato publico
+	-	tipo:STRING
+	-	validacion:
+	-	valores aceptables:<30 caracteres
+	-	volumen esperado:30 bytes
 
 catalogo:
-- id_catalogo(pk): identificacion catalogo, dato privado, NUM
+- id_catalogo:
+    	-	indice: (pk)
+    	-	descripcion: identificacion catalogo
+    	-	variabilidad: dato privado
+    	-	tipo: NUM
+    	-	validacion: 
+   	-	valores aceptables: numeros entre 1 y 9999
+    	-	volumen esperado: 4 bytes
+
 - id_material(fk): identificacion material, dato foraneo, NUM
 - id_filtro(fk): identificacion filtro, dato foraneo, NUM
-- nombre: nombre catalogo, STRING
-- fecha_creacion: fecha creacion catalogo, DATE
+
+
+- id_filtro:
+    	-	indice: (fk)
+    	-	descripcion: identificacion filtro
+    	-	variabilidad: dato privado
+    	-	tipo: NUM
+    	-	validacion: 
+    	-	valores aceptables: numeros entre 1 y 9999
+    	-	volumen esperado: 4 bytes
+
+- nombre:
+    	-	descripcion: nombre catalogo
+    	-	variabilidad: dato publico
+    	-	tipo: String
+    	-	validacion: 
+    	-	valores aceptables: Caracteres ASCII, hasta 60 letras
+    	-	volumen esperado: 60 bytes
+
+- fecha_creacion:
+    	-	descripcion: fecha de creacion catálogo
+    	-	variabilidad: dato publico
+    	-	tipo: DATE
+    	-	validacion: 
+    	-	valores aceptables: Largo de 30 caracteres máximo
+    	-	volumen esperado: 30 bytes
+    	
+
 
 solicitud-prestamo:
-- id_solicitud(pk): identificacion solicitud prestamo, dato privado, NUM
-- id_material(fk): identificacion material, dato foraneo, NUM
-- id_usuario(fk):identificacion usuario, dato foraneo, NUM
-- fecha_solicitud: fecha solicitud prestamo, DATE
-- hora_solicitud: hora solicitud prestamo, TIME
+- id_solicitud:
+    	-	indice: (pk)
+    	-	descripcion: identificacion solicitud de prestamo
+    	-	variabilidad: dato privado
+    	-	tipo: NUM
+    	-	validacion: 
+    	-	valores aceptables: numeros entre 1 y 999999999999
+    	-	volumen esperado: 12 bytes
+
+- id_material(fk)
+- id_usuario(fk)
+
+- fecha_solicitud:
+    	-	descripcion: fecha en que se realizó la solicitud
+    	-	variabilidad: dato privado
+    	-	tipo: DATE
+    	-	validacion: 
+    	-	valores aceptables: Largo de 30 caracteres máximo
+    	-	volumen esperado: 30 bytes
+
+
+
 
 ## **XML:**
 
