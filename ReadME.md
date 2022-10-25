@@ -98,8 +98,8 @@ usuario:
 	-	variabilidad: dato publico
 	-	tipo:STRING
 	-	validacion:
-	-	valores aceptables: <40 caracteres
-	-	volumen esperado:40 bytes
+	-	valores aceptables: <20 caracteres
+	-	volumen esperado:20 char
 
 - apellido_p: 
 	-	descripcion:apellido paterno usuario
@@ -107,7 +107,7 @@ usuario:
 	-	tipo:STRING
 	-	validacion:
 	-	valores aceptables:<40 caracteres
-	-	volumen esperado:40 bytes
+	-	volumen esperado:40 char
 
 - apellido_m: 
 	-	descripcion:apellido materno usuario
@@ -115,7 +115,7 @@ usuario:
 	-	tipo:STRING
 	-	validacion:
 	-	valores aceptables:<40 caracteres
-	-	volumen esperado:40 bytes
+	-	volumen esperado:40 char
 
 - direccion: 
 	-	descripcion:direccion usuario
@@ -123,7 +123,7 @@ usuario:
 	-	tipo:STRING
 	-	validacion:
 	-	valores aceptables:<100 caracteres
-	-	volumen esperado:30 bytes
+	-	volumen esperado:30 char
 
 - teléfono: 
 	-	descripcion:fono usuario
@@ -167,7 +167,7 @@ material:
 	-	tipo:STRING
 	-	validacion:
 	-	valores aceptables:<30 caracteres
-	-	volumen esperado:30 bytes
+	-	volumen esperado:30 char
 	
 - autor: 
 	- 	descripcion: autor material
@@ -175,7 +175,7 @@ material:
 	-	tipo:STRING
 	-	validacion:
 	-	valores aceptables:<20 caracteres
-	-	volumen esperado:20 bytes
+	-	volumen esperado:20 char
 
 - anyo: 
 	-	descripcion: fecha creacion material
@@ -199,7 +199,7 @@ material:
 	-	tipo:STRING
 	-	validacion:
 	-	valores aceptables:<30 caracteres
-	-	volumen esperado:30 bytes
+	-	volumen esperado:30 char
 	
 - tipo: 
 	-	descripcion: tipo material
@@ -207,7 +207,7 @@ material:
 	-	tipo:STRING
 	-	validacion:
 	-	valores aceptables:<30 caracteres
-	-	volumen esperado:30 bytes
+	-	volumen esperado:30 char
 
 
 catalogo:
@@ -218,7 +218,7 @@ catalogo:
 	-	tipo: NUM
 	-	validacion:
 	-	valores aceptables: numeros entre 1 y 9999
-	-	volumen esperado: 4 bytes
+	-	volumen esperado: 5 bytes
 	
 -	id_material(fk)
 -	id_filtro(fk)
@@ -239,7 +239,7 @@ catalogo:
 	-	tipo: String
 	-	validacion: 
 	-	valores aceptables: Caracteres ASCII, hasta 60 letras
-	-	volumen esperado: 60 bytes
+	-	volumen esperado: 60 char
 
 - 	fecha_creacion:
 	-	descripcion: fecha de creacion catálogo
