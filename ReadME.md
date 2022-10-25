@@ -224,7 +224,7 @@ catalogo:
 -	id_filtro(fk)
 
 
-- id_filtro:
+- 	id_filtro:
     	-	indice: (fk)
     	-	descripcion: identificacion filtro
     	-	variabilidad: dato privado
@@ -233,7 +233,7 @@ catalogo:
     	-	valores aceptables: numeros entre 1 y 9999
     	-	volumen esperado: 4 bytes
 
-- nombre:
+- 	nombre:
     	-	descripcion: nombre catalogo
     	-	variabilidad: dato publico
     	-	tipo: String
@@ -241,7 +241,7 @@ catalogo:
     	-	valores aceptables: Caracteres ASCII, hasta 60 letras
     	-	volumen esperado: 60 bytes
 
-- fecha_creacion:
+- 	fecha_creacion:
     	-	descripcion: fecha de creacion catálogo
     	-	variabilidad: dato publico
     	-	tipo: DATE
@@ -252,7 +252,7 @@ catalogo:
 
 
 solicitud-prestamo:
-- id_solicitud:
+- 	id_solicitud:
     	-	indice: (pk)
     	-	descripcion: identificacion solicitud de prestamo
     	-	variabilidad: dato privado
@@ -261,10 +261,10 @@ solicitud-prestamo:
     	-	valores aceptables: numeros entre 1 y 999999999999
     	-	volumen esperado: 12 bytes
 
-- id_material(fk)
-- id_usuario(fk)
+- 	id_material(fk)
+- 	id_usuario(fk)
 
-- fecha_solicitud:
+- 	fecha_solicitud:
     	-	descripcion: fecha en que se realizó la solicitud
     	-	variabilidad: dato privado
     	-	tipo: DATE
