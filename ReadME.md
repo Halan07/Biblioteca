@@ -290,28 +290,87 @@ solicitud-prestamo:
 
 
 ## **Servicios SOA**
+Prestamo Material
 
- Contrato:
- 
- 	entradas:
-		-	Identificacion usuario solicitante.
-		-	Identificacion material solicitado.
-		-	Fecha del momento.
+		Busqueda de material para prestamo
+			Contrato:
+				entradas:
+					palabras clave de busqueda.
+				salidas:
+					listado material coincidente.
+				operaciones:
+					consulta a bd de material coincidente con
+					las palabras claves ingresadas por el usuario.
+				binding:
+					el usuario ingresa palabras clave en la GUI
+					para ver el material disponible.
+			Orquestacion:
+				Se relaciona con el servicio de consulta a bd.
+			Consumidores:
+				Presentación, Usuario, API
+			Productores:
+				API, BD
 
-	salidas:
-		-	Identificacion solicitud de prestamo.
-		-	Fecha entrega material.
-		-	Fecha creación solicitud.
+		ingreso solicitud del prestamo
+			Contrato:
+				entradas:
+					identificadores material.
+				salidas:
+					registro de solicitud en BD.
+				operaciones:
+					registro de solicitud de prestamo con datos
+					ingresados por el usuario.
+				binding:
+					el usuario ingresa los codigos de material 
+					en la GUI	para solicitar su prestamo.
+			Orquestacion:
+				Se relaciona con el servicio de consulta a bd.
+			Consumidores:
+				Usuario, presentación, API
+			Productores:
+				API, BD
 
-	binding:
-		-	El usuario ingresa por medio de una GUI el material que solicita. Se toma registro de 
-			su identificador unico, el identificador unico del material solicitado y la fecha del momento,
-			con estos datos se genera una solicitud de material, que contiene los elementos necesarios 
-			para que el bibliotecario pueda saber que el material especificado ha sido reservado.
+		validacion prestamo
+			Contrato:
+				entradas:
+					datos desde ingreso solicitud de prestamo.
+				salidas:
+					mensaje de confirmacion o error.
+				operaciones:
+					consulta de insercion a la bd.
+				binding:
+					el aplicativo inserta datos de solicitud en
+					caso de ser validos, en caso de no serlo, se
+					rechaza la solicitud.
+			Orquestacion:
+				Se relaciona con el servicio de solicitud de
+				prestamo y API.
+			Consumidores:
+				Presentación, API
+			Productores:
+				API, BD
 
-		-	Es necesario notificar al usuario si la transaccion ha sido exitosa, 
-			de no serlo debe señalarse el motivo, para que este pueda intentarlo nuevamente.
-		-	La prioridad de este servicio es alta.
+		entrega material al usuario
+			Contrato:
+				entradas:
+					solicitud de prestamo.
+				salidas:
+					prestamo de material.
+				operaciones:
+					se insertan los datos correspondientes al
+					prestamo generado en tabla Prestamo.
+				binding:
+					el bibliotecario entrega el material solicitado
+					al usuario. Registra este prestamo en prestamos
+					entregados.
+			Orquestacion:
+				se relaciona con el servicio de solicitud de
+				prestamo y prestamos por entregar, prestamos
+				entregados.
+			Consumidores:
+				Bibliotecario, Usuario.
+			Productores:
+				API, BD
 
 
 
