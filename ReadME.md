@@ -219,9 +219,8 @@ catalogo:
    	-	valores aceptables: numeros entre 1 y 9999
     	-	volumen esperado: 4 bytes
 
-- id_material(fk): identificacion material, dato foraneo, NUM
-
-- id_filtro(fk): identificacion filtro, dato foraneo, NUM
+- id_material(fk)
+- id_filtro(fk)
 
 
 - id_filtro:
