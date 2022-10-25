@@ -208,6 +208,8 @@ material:
 	-	validacion:
 	-	valores aceptables:<30 caracteres
 	-	volumen esperado:30 bytes
+
+
 catalogo:
 -	id_catalogo:
 	-	indice: (pk)
@@ -218,19 +220,8 @@ catalogo:
 	-	valores aceptables: numeros entre 1 y 9999
 	-	volumen esperado: 4 bytes
 	
-	
-catalogo:
-- id_catalogo:
-    	-	indice: (pk)
-    	-	descripcion: identificacion catalogo
-    	-	variabilidad: dato privado
-    	-	tipo: NUM
-    	-	validacion: 
-   	-	valores aceptables: numeros entre 1 y 9999
-    	-	volumen esperado: 4 bytes
-
-- id_material(fk)
-- id_filtro(fk)
+-	id_material(fk)
+-	id_filtro(fk)
 
 
 - id_filtro:
