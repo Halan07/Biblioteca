@@ -10,7 +10,7 @@
 			<telefono> </telefono>
 			<activo> </activo>
 			<huella> </huella>
-			<foto> </foto>
+			
 		</usuario>
         	<material>
 			<id_material></id_material>
