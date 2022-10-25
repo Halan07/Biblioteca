@@ -84,7 +84,7 @@ usuario:
 	-	descripcion: identificacion usuario
 	-	variabilidad: dato privado
 	-	tipo:NUM
-	-	validacion:
+	-	validacion:Uniqueness Check
 	-	valores aceptables:>0
 	-	volumen esperado:24 bytes
 
@@ -92,7 +92,7 @@ usuario:
 	-	descripcion:rutificador usuario
 	-	variabilidad:dato privado unico
 	-	tipo:NUM
-	-	validacion:
+	-	validacion:Code Check
 	-	valores aceptables:>0
 	-	volumen esperado:30 bytes
 
@@ -100,7 +100,7 @@ usuario:
 	-	descripcion:nombre usuario
 	-	variabilidad: dato publico
 	-	tipo:STRING
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables: <20 caracteres
 	-	volumen esperado:20 char
 
@@ -108,7 +108,7 @@ usuario:
 	-	descripcion:apellido paterno usuario
 	-	variabilidad: dato privado
 	-	tipo:STRING
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:<40 caracteres
 	-	volumen esperado:40 char
 
@@ -116,7 +116,7 @@ usuario:
 	-	descripcion:apellido materno usuario
 	-	variabilidad: dato privado
 	-	tipo:STRING
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:<40 caracteres
 	-	volumen esperado:40 char
 
@@ -124,7 +124,7 @@ usuario:
 	-	descripcion:direccion usuario
 	-	variabilidad: dato privado
 	-	tipo:STRING
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:<100 caracteres
 	-	volumen esperado:30 char
 
@@ -133,7 +133,7 @@ usuario:
 	-	variabilidad: dato privado
 	-	variabilidad:dato privado unico
  	-	tipo:NUM
- 	-	validacion:
+ 	-	validacion:Code Check
 	-	valores aceptables:>0
 	-	volumen esperado:10 bytes
 
@@ -141,7 +141,7 @@ usuario:
 	-	descripcion:actividad usuario
 	-	variabilidad: dato publico
 	-	tipo:BOOL
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:>0
 	-	volumen esperado:2 bytes
 
@@ -149,7 +149,7 @@ usuario:
 	-	descripcion:huella corroboracion usuario
 	-	variabilidad: dato privado
 	-	tipo:DATO BIOMETRICO
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:>0
 	-	volumen esperado:30 bytes
 
@@ -160,7 +160,7 @@ material:
 	-	descripcion: identificacion material
 	-	variabilidad: dato privado
 	-	tipo:NUM
-	-	validacion:
+	-	validacion:Code Check
 	-	valores aceptables:>0
 	-	volumen esperado:24 bytes
 	
@@ -168,7 +168,7 @@ material:
 	-	descripcion: titulo material
 	-	variabilidad: dato publico
 	-	tipo:STRING
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:<30 caracteres
 	-	volumen esperado:30 char
 	
@@ -176,7 +176,7 @@ material:
 	- 	descripcion: autor material
 	-	variabilidad: dato publico
 	-	tipo:STRING
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:<20 caracteres
 	-	volumen esperado:20 char
 
@@ -184,7 +184,7 @@ material:
 	-	descripcion: fecha creacion material
 	-	variabilidad: dato publico
 	-	tipo:DATE
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:fecha unica
 	-	volumen esperado:30 bytes
 	
@@ -192,7 +192,7 @@ material:
 	-	descripcion: fecha ingreso material
 	-	variabilidad: dato publico
 	-	tipo:DATE
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:fecha unica
 	-	volumen esperado:30 bytes
 	
@@ -200,7 +200,7 @@ material:
 	- 	descripcion: categoria material
 	-	variabilidad: dato publico
 	-	tipo:STRING
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:<30 caracteres
 	-	volumen esperado:30 char
 	
@@ -208,7 +208,7 @@ material:
 	-	descripcion: tipo material
 	-	variabilidad: dato publico
 	-	tipo:STRING
-	-	validacion:
+	-	validacion:Data type check
 	-	valores aceptables:<30 caracteres
 	-	volumen esperado:30 char
 
@@ -219,7 +219,7 @@ catalogo:
 	-	descripcion: identificacion catalogo
 	-	variabilidad: dato privado
 	-	tipo: NUM
-	-	validacion:
+	-	validacion:Uniqueness Check
 	-	valores aceptables: numeros entre 1 y 9999
 	-	volumen esperado: 5 bytes
 	
@@ -232,7 +232,7 @@ catalogo:
 	-	descripcion: identificacion filtro
 	-	variabilidad: dato privado
 	-	tipo: NUM
-	-	validacion: 
+	-	validacion: Uniqueness check
 	-	valores aceptables: numeros entre 1 y 9999
 	-	volumen esperado: 4 bytes
 
@@ -240,7 +240,7 @@ catalogo:
 	-	descripcion: nombre catalogo
 	-	variabilidad: dato publico
 	-	tipo: String
-	-	validacion: 
+	-	validacion: Data type check
 	-	valores aceptables: Caracteres ASCII, hasta 60 letras
 	-	volumen esperado: 60 char
 
@@ -248,7 +248,7 @@ catalogo:
 	-	descripcion: fecha de creacion catálogo
 	-	variabilidad: dato publico
 	-	tipo: DATE
-	-	validacion: 
+	-	validacion: Data type check
 	-	valores aceptables: Largo de 30 caracteres máximo
 	-	volumen esperado: 30 bytes
     	
@@ -260,7 +260,7 @@ solicitud-prestamo:
 	-	descripcion: identificacion solicitud de prestamo
 	-	variabilidad: dato privado
 	-	tipo: NUM
-	-	validacion: 
+	-	validacion: Uniqueness Check
 	-	valores aceptables: numeros entre 1 y 999999999999
 	-	volumen esperado: 12 bytes
 
@@ -271,7 +271,7 @@ solicitud-prestamo:
 	-	descripcion: fecha en que se realizó la solicitud
 	-	variabilidad: dato privado
 	-	tipo: DATE
-	-	validacion: 
+	-	validacion: Data type check
 	-	valores aceptables: Largo de 30 caracteres máximo
 	-	volumen esperado: 30 bytes
 
