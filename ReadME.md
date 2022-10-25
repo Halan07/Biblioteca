@@ -177,7 +177,7 @@ material:
 	-	valores aceptables:<20 caracteres
 	-	volumen esperado:20 bytes
 
-- anyo: fecha creacion material, DATE
+- anyo: 
 	-	descripcion: fecha creacion material
 	-	variabilidad: dato publico
 	-	tipo:DATE
@@ -185,7 +185,7 @@ material:
 	-	valores aceptables:fecha unica
 	-	volumen esperado:30 bytes
 	
-- fecha_ingreso: fecha ingreso material, DATE
+- fecha_ingreso: 
 	-	descripcion: fecha ingreso material
 	-	variabilidad: dato publico
 	-	tipo:DATE
@@ -193,7 +193,7 @@ material:
 	-	valores aceptables:fecha unica
 	-	volumen esperado:30 bytes
 	
-- categoria: categoria material, STRING
+- categoria: 
 	- 	descripcion: categoria material
 	-	variabilidad: dato publico
 	-	tipo:STRING
@@ -201,7 +201,7 @@ material:
 	-	valores aceptables:<30 caracteres
 	-	volumen esperado:30 bytes
 	
-- tipo: tipo material, STRING
+- tipo: 
 	-	descripcion: tipo material
 	-	variabilidad: dato publico
 	-	tipo:STRING
@@ -220,6 +220,7 @@ catalogo:
     	-	volumen esperado: 4 bytes
 
 - id_material(fk): identificacion material, dato foraneo, NUM
+
 - id_filtro(fk): identificacion filtro, dato foraneo, NUM
 
 
