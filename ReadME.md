@@ -225,29 +225,29 @@ catalogo:
 
 
 - 	id_filtro:
-    	-	indice: (fk)
-    	-	descripcion: identificacion filtro
-    	-	variabilidad: dato privado
-    	-	tipo: NUM
-    	-	validacion: 
-    	-	valores aceptables: numeros entre 1 y 9999
-    	-	volumen esperado: 4 bytes
+	-	indice: (fk)
+	-	descripcion: identificacion filtro
+	-	variabilidad: dato privado
+	-	tipo: NUM
+	-	validacion: 
+	-	valores aceptables: numeros entre 1 y 9999
+	-	volumen esperado: 4 bytes
 
 - 	nombre:
-    	-	descripcion: nombre catalogo
-    	-	variabilidad: dato publico
-    	-	tipo: String
-    	-	validacion: 
-    	-	valores aceptables: Caracteres ASCII, hasta 60 letras
-    	-	volumen esperado: 60 bytes
+	-	descripcion: nombre catalogo
+	-	variabilidad: dato publico
+	-	tipo: String
+	-	validacion: 
+	-	valores aceptables: Caracteres ASCII, hasta 60 letras
+	-	volumen esperado: 60 bytes
 
 - 	fecha_creacion:
-    	-	descripcion: fecha de creacion catálogo
-    	-	variabilidad: dato publico
-    	-	tipo: DATE
-    	-	validacion: 
-    	-	valores aceptables: Largo de 30 caracteres máximo
-    	-	volumen esperado: 30 bytes
+	-	descripcion: fecha de creacion catálogo
+	-	variabilidad: dato publico
+	-	tipo: DATE
+	-	validacion: 
+	-	valores aceptables: Largo de 30 caracteres máximo
+	-	volumen esperado: 30 bytes
     	
 
 
