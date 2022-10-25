@@ -253,24 +253,24 @@ catalogo:
 
 solicitud-prestamo:
 - 	id_solicitud:
-    	-	indice: (pk)
-    	-	descripcion: identificacion solicitud de prestamo
-    	-	variabilidad: dato privado
-    	-	tipo: NUM
-    	-	validacion: 
-    	-	valores aceptables: numeros entre 1 y 999999999999
-    	-	volumen esperado: 12 bytes
+	-	indice: (pk)
+	-	descripcion: identificacion solicitud de prestamo
+	-	variabilidad: dato privado
+	-	tipo: NUM
+	-	validacion: 
+	-	valores aceptables: numeros entre 1 y 999999999999
+	-	volumen esperado: 12 bytes
 
 - 	id_material(fk)
 - 	id_usuario(fk)
 
 - 	fecha_solicitud:
-    	-	descripcion: fecha en que se realizó la solicitud
-    	-	variabilidad: dato privado
-    	-	tipo: DATE
-    	-	validacion: 
-    	-	valores aceptables: Largo de 30 caracteres máximo
-    	-	volumen esperado: 30 bytes
+	-	descripcion: fecha en que se realizó la solicitud
+	-	variabilidad: dato privado
+	-	tipo: DATE
+	-	validacion: 
+	-	valores aceptables: Largo de 30 caracteres máximo
+	-	volumen esperado: 30 bytes
 
 
 
