@@ -72,7 +72,7 @@ Estudiantes, Vecinos, Municipio | Disponibilidad del material. | El stock de la 
 ![alt text](diagramaMotivaciones.drawio.png)
 ## **Diagrama Relacional**
 
-![alt text](diagrama.png)
+![alt text](diagramaa.png)
 
 ## **Documentar Metadatos**
 
