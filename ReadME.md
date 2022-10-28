@@ -304,53 +304,34 @@ Prestamo Material
 					consulta a bd de material coincidente con
 					las palabras claves ingresadas por el usuario.
 				binding:
-					el usuario ingresa palabras clave en la GUI
-					para ver el material disponible.
+					se entregan las coincidencias de busqueda a 
+					partir de las palabras ingresadas.
 			Orquestacion:
 				Se relaciona con el servicio de consulta a bd.
 			Consumidores:
 				Presentación, Usuario, API
 			Productores:
-				API, BD
+				Administracion contenido, consultora
 
 		ingreso solicitud del prestamo
 			Contrato:
 				entradas:
-					identificadores material.
+					identificadores de material.
 				salidas:
 					registro de solicitud en BD.
 				operaciones:
 					registro de solicitud de prestamo con datos
 					ingresados por el usuario.
 				binding:
-					el usuario ingresa los codigos de material 
-					en la GUI	para solicitar su prestamo.
+					el usuario solicita un prestamo, el aplicativo
+					registra el prestamo. De ser posible, retorna
+					un mensaje con la respuesta al usuario.
 			Orquestacion:
 				Se relaciona con el servicio de consulta a bd.
 			Consumidores:
-				Usuario, presentación, API
+				Usuario, Bibliotecario
 			Productores:
-				API, BD
-
-		validacion prestamo
-			Contrato:
-				entradas:
-					datos desde ingreso solicitud de prestamo.
-				salidas:
-					mensaje de confirmacion o error.
-				operaciones:
-					consulta de insercion a la bd.
-				binding:
-					el aplicativo inserta datos de solicitud en
-					caso de ser validos, en caso de no serlo, se
-					rechaza la solicitud.
-			Orquestacion:
-				Se relaciona con el servicio de solicitud de
-				prestamo y API.
-			Consumidores:
-				Presentación, API
-			Productores:
-				API, BD
+				Consultora
 
 		entrega material al usuario
 			Contrato:
@@ -370,9 +351,9 @@ Prestamo Material
 				prestamo y prestamos por entregar, prestamos
 				entregados.
 			Consumidores:
-				Bibliotecario, Usuario.
+				Usuario
 			Productores:
-				API, BD
+				Bibliotecario
 
 
 
