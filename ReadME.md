@@ -74,6 +74,81 @@ Estudiantes, Vecinos, Municipio | Disponibilidad del material. | El stock de la 
 
 ![alt text](diagramaa.jpg)
 
+
+```mermaid
+classDiagram
+
+    Estado --* Prestamo
+    Tipo_prestamo --* Prestamo
+    Prestamo *-- Multa
+    Prestamo --* Usuario
+    
+    Usuario *-- Rol
+    
+    Catalogo -- Prestamo
+    Catalogo o-- Documento
+    Catalogo *-- Filtro
+
+    Documento <|-- Libro
+    Documento <|-- Multimedia
+
+    class Usuario{
+        -id_usuario: Int
+        -rut: String
+        +nombre: String
+        +apellido_p: String
+        +apellido_m: String
+        +correo: String
+        -telefono: String
+        +foto: Bin
+        -huella: Bin
+    }
+    class Rol{
+        -id_rol: Int
+        +rol: String
+    }
+    class Documento{
+        -id_documento: Int
+        +stock: Int
+    }
+    class Libro{
+        +genero: String
+        +autor: String
+        +editorial: String
+    }
+    class Multimedia{
+        +tipo: String
+        +nombre: String
+        +autor: String
+    }
+    class Prestamo{
+        -id_prestamo: Int
+        +fecha_prestamo: Date
+        +fecha_dev: Date
+        +fecha_dev_real: Date
+    }
+    class Estado{
+        -id_estado: Int
+        +estado: String
+    }
+    class Multa{
+        -id_multa: Int
+        +multa: String
+    }
+    class Catalogo{
+        -id_catalogo: Int
+        +titulo: String
+    }
+    class Filtro{
+        -id_filtro: Int
+        +filtro: String
+    }
+    class Tipo_prestamo{
+        -id_prestamo: Int
+        +tipo: String
+    }
+```
+
 ## **Documentar Metadatos**
 
 
