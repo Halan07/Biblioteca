@@ -6,7 +6,7 @@
 
 ## **Modelo de capas Google Cloud Platform**
 
-![alt text](ModeloCloud.png)
+![alt text](ImagenCloud.png)
 
 
 ## **Documentacion**
