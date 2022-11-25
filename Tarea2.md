@@ -25,27 +25,8 @@
 
 - Dataflow: Orquesta los servicios del sistema, autoescalando los servicios adaptando el alcance a la demanda en tiempo real.
 
-- Firebase Authentication: Permite el registro y autenticación de los usuarios de manera segura, con encriptación local. Otorga la posibilidad de autenticación con huella digital, la que será utilizada en la 
+- Firebase Authentication: Permite el registro y autenticación de los usuarios de manera segura, con encriptación local. Otorga la posibilidad de autenticación con huella digital, la que será utilizada dentro de la biblioteca para permitir el registro final y la ejecución de los préstamos solicitados por los usuarios.
 
+- Firestore: Permite el almacenamiento de los datos de los usuarios, tales como nombre, dirección, teléfono, etc. Más relevante aún, permite generar documentos de préstamo y devolución para cada usuario, separando los datos de la biblioteca de aquellos de los usuarios.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Cloud Storage: Permite almacenar objetos con atributos, lo que facilita el ingreso de documentos, archivos, audios, etc. con formatos estandarizados.
