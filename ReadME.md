@@ -460,6 +460,6 @@ Prestamo Material
 - Cloud Storage: Permite almacenar objetos con atributos, lo que facilita el ingreso de documentos, archivos, audios, etc. con formatos estandarizados.
 
 
-
-
+## **Codigo Swagger:**
+[CODIGO](https://github.com/Halan07/Biblioteca/blob/main/openapi_2(1).yaml)
 
