@@ -107,6 +107,7 @@ classDiagram
     }
     class Documento{
         -id_documento: Int
+	+nombre: String
         +stock: Int
     }
     class Libro{
