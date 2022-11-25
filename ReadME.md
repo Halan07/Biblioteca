@@ -434,7 +434,7 @@ Prestamo Material
 
 ## **Modelo de capas Google Cloud Platform**
 
-![alt text](modelocloud.png)
+![alt text](ModeloGcp.jpeg)
 
 
 ## **Documentacion**
