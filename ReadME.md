@@ -117,7 +117,6 @@ classDiagram
     }
     class Multimedia{
         +tipo: String
-        +nombre: String
         +autor: String
     }
     class Prestamo{
