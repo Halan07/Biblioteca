@@ -98,6 +98,9 @@ classDiagram
         +apellido_m: String
         +correo: String
         -telefono: String
+	-calle: String
+	-ciudad: String
+	-region: String
         +foto: Bin
         -huella: Bin
     }
