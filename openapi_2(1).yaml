@@ -1,17 +1,17 @@
 openapi: 3.0.3
 info:
-  title: Swagger Library - OpenAPI 3.0
+  title: Swagger Petstore - OpenAPI 3.0
   description: |-
-    This is a sample Document Library Server based on the OpenAPI 3.0 specification.  You can find out more about
-    Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the document library, we've switched to the design first approach!
+    This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
+    Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
     You can now help us improve the API whether it's by making changes to the definition itself or to the code.
     That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
 
-    _If you're looking for the Swagger 2.0/OAS 2.0 version of Library, then click [here](https://editor.swagger.io/?url=https://documentlibrary.swagger.io/v2/swagger.yaml). Alternatively, you can load via the `Edit > Load Library OAS 2.0` menu option!_
+    _If you're looking for the Swagger 2.0/OAS 2.0 version of Petstore, then click [here](https://editor.swagger.io/?url=https://petstore.swagger.io/v2/swagger.yaml). Alternatively, you can load via the `Edit > Load Petstore OAS 2.0` menu option!_
     
     Some useful links:
-    - [The Document Library repository](https://github.com/swagger-api/swagger-documentlibrary)
-    - [The source API definition for the Document Library](https://github.com/swagger-api/swagger-documentlibrary/blob/master/src/main/resources/openapi.yaml)
+    - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
+    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
   termsOfService: http://swagger.io/terms/
   contact:
     email: apiteam@swagger.io
@@ -23,40 +23,47 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-  - url: https://documentlibrary3.swagger.io/api/v3
+  - url: https://petstore3.swagger.io/api/v3
 tags:
   - name: document
-    description: Everything about your Documents
+    description: Everything about documents
     externalDocs:
       description: Find out more
       url: http://swagger.io
   - name: library
-    description: Access to Library orders
+    description: Access to library orders
     externalDocs:
       description: Find out more about our library
       url: http://swagger.io
   - name: user
     description: Operations about user
 paths:
-  /document:
+  /inventory/book:
     put:
       tags:
         - document
-      summary: Update a exist document
-      description: Update a exist document by Id
-      operationId: updateDocument
+      summary: Update an existing book
+      description: Update an existing book by Id
+      operationId: updateBook
+      parameters:
+        - name: id_libro
+          in: query
+          description: id of book that need to be modified
+          required: true
+          schema:
+            type: string
       requestBody:
-        description: Update a exist document in the library
+        description: Update an existent book in the library
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Document'
+              $ref: '#/components/schemas/Book'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Document'
+              $ref: '#/components/schemas/Book'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/Document'
+              $ref: '#/components/schemas/Book'
         required: true
       responses:
         '200':
@@ -64,38 +71,40 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Document'          
+                $ref: '#/components/schemas/Book'          
             application/xml:
               schema:
-                $ref: '#/components/schemas/Document'
+                $ref: '#/components/schemas/Book'
+        '304':
+          description: Not modified
         '400':
           description: Invalid ID supplied
+        '401':
+          description: Unauthorized
         '404':
-          description: Document not found
+          description: Book not found
         '405':
           description: Validation exception
-      security:
-        - documentlibrary_auth:
-            - write:documents
-            - read:documents
+        'default':
+          description: Internal server error
     post:
       tags:
         - document
-      summary: add document to library
-      description: Add document to library
-      operationId: addDocument
+      summary: Add a new book to the library
+      description: Add a new book to the library
+      operationId: addBook
       requestBody:
-        description: Create a document in the library
+        description: Create a new book in the library
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Document'
+              $ref: '#/components/schemas/Book'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Document'
+              $ref: '#/components/schemas/Book'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/Document'
+              $ref: '#/components/schemas/Book'
         required: true
       responses:
         '200':
@@ -103,167 +112,234 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Document'          
+                $ref: '#/components/schemas/Book'          
             application/xml:
               schema:
-                $ref: '#/components/schemas/Document'
+                $ref: '#/components/schemas/Book'
+        '400':
+          description: Invalid ID supplied
+        '401':
+          description: Unauthorized
         '405':
           description: Invalid input
-      security:
-        - documentlibrary_auth:
-            - write:documents
-            - read:documents
-  /document/findByName:
-    get:
+        'default':
+          description: Internal server error
+  /inventory/multimedia:
+    put:
       tags:
         - document
-      summary: Finds Documents by name
-      description: Finds document by name
-      operationId: findDocumentsByName
+      summary: Update an existing multimedia
+      description: Update an existing multimedia by Id
+      operationId: updateMultimedia
       parameters:
-        - name: name
+        - name: id_multimedia
           in: query
-          description: Name to filter by
-          required: false
-          explode: true
+          description: id of multimedia that need to be modified
+          required: true
           schema:
-            items:
-              type: string
+            type: string
+      requestBody:
+        description: Update an existent multimedia in the library
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Multimedia'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Multimedia'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Multimedia'
+        required: true
       responses:
         '200':
-          description: successful operation
+          description: Successful operation
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Document'          
+                $ref: '#/components/schemas/Multimedia'          
             application/xml:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Document'
+                $ref: '#/components/schemas/Multimedia'
+        '304':
+          description: Not modified
         '400':
-          description: Invalid tag value
-      security:
-        - documentlibrary_auth:
-            - write:documents
-            - read:documents
-  /library/stock:
+          description: Invalid ID supplied
+        '401':
+          description: Unauthorized
+        '404':
+          description: Multimedia not found
+        '405':
+          description: Validation exception
+        'default':
+          description: Internal server error
+    post:
+      tags:
+        - document
+      summary: Add a new book to the library
+      description: Add a new book to the library
+      operationId: addMultimedia
+      requestBody:
+        description: Create a new book in the library
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Multimedia'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Multimedia'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Multimedia'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Multimedia'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Multimedia'
+        '400':
+          description: Invalid ID supplied
+        '401':
+          description: Unauthorized
+        '405':
+          description: Invalid input
+        'default':
+          description: Internal server error  
+  /catalogue/{filtro}:
     get:
       tags:
         - library
-      summary: Returns document stock
-      description: Returns stock of documents
-      operationId: getInventory
+      summary: Returns documents object
+      description: Returns documents object
+      operationId: getDocuments
       parameters:
-        - name: name
-          in: query
-          description: Name to filter by
-          required: false
-          explode: true
+        - name: filtro
+          in: path
+          description: 'The filter that needs to be fetched. Use Books for testing. '
+          required: true
           schema:
-            items:
-              type: string
+            type: string
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                type: integer
-                example: 30
-      security:
-        - api_key: []
+                $ref: '#/components/schemas/Catalogue'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Catalogue'
+        '400':
+          description: Invalid filter supplied
+        '404':
+          description: filter not found
+        'default':
+          description: Internal Server Error
   /library/order:
     post:
       tags:
         - library
-      summary: Place an order for a document
+      summary: Place an order for documents
       description: Place a new order in the library
       operationId: placeOrder
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Prestamo'
+              $ref: '#/components/schemas/Order'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Prestamo'
+              $ref: '#/components/schemas/Order'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/Prestamo'
+              $ref: '#/components/schemas/Order'
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Prestamo'
+                $ref: '#/components/schemas/Order'
+        '400':
+          description: Bad Request
         '405':
           description: Invalid input
-        '500':
-          description: Internal server error
     put:
       tags:
         - library
-      summary: Update order
-      description: Update order in the library
+      summary: Update an order
+      description: Update an order in the library
       operationId: updateOrder
+      parameters:
+        - name: id_prestamo
+          in: query
+          description: 'The order that needs to be fetched.'
+          required: true
+          schema:
+            type: integer
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Prestamo'
+              $ref: '#/components/schemas/Order'
           application/xml:
             schema:
-              $ref: '#/components/schemas/Prestamo'
+              $ref: '#/components/schemas/Order'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/Prestamo'
-        required: true
+              $ref: '#/components/schemas/Order'
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Prestamo'
+                $ref: '#/components/schemas/Order'
+        '400':
+          description: Bad Request
         '405':
           description: Invalid input
-        '500':
-          description: Internal server error
-  /library/order/{orderId}:
+        'default':
+          description: Internal Server Error
+  /library/order/{id_prestamo}:
     get:
       tags:
         - library
-      summary: Find order by ID
-      description: For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
-      operationId: getOrderById
+      summary: Find orders by ID
+      description: Find orders by ID
+      operationId: getOrders
       parameters:
-        - name: orderId
+        - name: id_prestamo
           in: path
-          description: ID of order that needs to be fetched
+          description: 'The id_prestamo that needs to be fetched.'
           required: true
           schema:
             type: integer
-            format: int64
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Prestamo'          
+                $ref: '#/components/schemas/Book'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Prestamo'
+                $ref: '#/components/schemas/Book'
         '400':
           description: Invalid ID supplied
+        '401':
+          description: Unauthorized
         '404':
-          description: Order not found
-        '500':
-          description: Internal server error
+          description: ID not found
+        '405':
+          description: Invalid input
+        'default':
+          description: Internal Server Error
   /user:
     post:
       tags:
@@ -293,8 +369,6 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/User'
-        '500':
-          description: Internal server error
   /user/login:
     get:
       tags:
@@ -303,9 +377,9 @@ paths:
       description: ''
       operationId: loginUser
       parameters:
-        - name: username
+        - name: email
           in: query
-          description: The user name for login
+          description: The email for login
           required: false
           schema:
             type: string
@@ -318,7 +392,6 @@ paths:
       responses:
         '200':
           description: successful operation
-          
           headers:
             X-Rate-Limit:
               description: calls per hour allowed by the user
@@ -331,14 +404,20 @@ paths:
                 type: string
                 format: date-time
           content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
             application/xml:
               schema:
-                $ref: '#/components/schemas/User'
+                type: string
+            application/json:
+              schema:
+                type: string
         '400':
           description: Invalid username/password supplied
+        '404':
+          description: email not found
+        '405':
+          description: Validation exception
+        'default':
+          description: Internal server error
   /user/logout:
     get:
       tags:
@@ -350,17 +429,17 @@ paths:
       responses:
         default:
           description: successful operation
-  /user/{username}:
+  /user/{email}:
     get:
       tags:
         - user
-      summary: Get user by user name
+      summary: Get user by email
       description: ''
-      operationId: getUserByName
+      operationId: getUserByEmail
       parameters:
-        - name: username
+        - name: email
           in: path
-          description: 'The name that needs to be fetched. Use user1 for testing. '
+          description: 'The email that needs to be fetched. Use john@email.com for testing. '
           required: true
           schema:
             type: string
@@ -375,9 +454,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
         '400':
-          description: Invalid username supplied
+          description: Invalid email supplied
         '404':
           description: User not found
+  /user/{password}:
     put:
       tags:
         - user
@@ -385,7 +465,7 @@ paths:
       description: This can only be done by the logged in user.
       operationId: updateUser
       parameters:
-        - name: username
+        - name: password
           in: path
           description: name that need to be deleted
           required: true
@@ -406,156 +486,194 @@ paths:
       responses:
         default:
           description: successful operation
+        '400':
+          description: Invalid password
 components:
   schemas:
-    Prestamo:
+    Tipo_prestamo:
       type: object
       properties:
-        id:
+        id_tipo:
+          type: integer
+          example: 437
+        tipo_prestamo:
+          type: string
+          description: Tipo de prestamo realizado
+          enum:
+            - A domicilio
+            - En biblioteca
+      xml:
+        name: tipo_prestamo
+    Estado:
+      type: object
+      properties:
+        id_estado:
+          type: integer
+          example: 437
+        estado:
+          type: string
+          description: Estado del prestamo realizado
+          enum:
+            - Para entregar
+            - Prestado
+            - Atrasado
+            - Devuelto
+      xml:
+        name: estado
+    Order:
+      type: object
+      properties:
+        id_prestamo:
           type: integer
           format: int64
           example: 10
-        id_user:
+        id_usuario:
           type: integer
           format: int64
           example: 198772
         fecha_prestamo:
           type: string
           format: date
-        fecha_dev:
+        fecha_devolucion:
           type: string
           format: date
-        fecha_dev_real:
+        fecha_devolucion_real:
           type: string
-          format: date
+          description: date
+        tipo_prestamo:
+          type: array
+          xml:
+            name: tipo_prestamo
+            wrapped: true
+          items:
+            $ref: '#/components/schemas/Tipo_prestamo'
+        estado:
+          type: array
+          xml:
+            name: estado
+            wrapped: true
+          items:
+            $ref: '#/components/schemas/Estado'
       xml:
         name: order
     User:
       type: object
       properties:
-        id:
+        id_usuario:
           type: integer
           format: int64
           example: 10
+        rut:
+          type: string
+          example: 12345678-9
         nombre:
           type: string
           example: John
-        apellido_p:
+        apellido:
           type: string
           example: James
-        apellido_m:
-          type: string
-          example: Williams
         email:
           type: string
           example: john@email.com
         password:
           type: string
           example: '12345'
-        phone:
+        telefono:
           type: string
           example: '12345'
-        foto:
-          type: boolean
-          description: User Status
-          format: int32
-          example: 1
-        address:
+        direccion:
+          type: string
+          example: Haban 458
+        region: 
+          type: string
+          example: Valaparaiso
+        prestamo:
           type: array
           xml:
-            name: addresses
-            wrapped: true
+            name: prestamo
+            wrapped: false
           items:
-            $ref: '#/components/schemas/Address'
+            $ref: '#/components/schemas/Order'
       xml:
         name: user
-    Address:
+    Book:
       type: object
       properties:
-        calle:
+        id_libro:
+          type: integer
+          format: int64
+          example: 1
+        nombre:
           type: string
-          example: 437 Lytton
-        ciudad:
+          example: The art of war
+        stock:
+          type: integer
+          format: int64
+          example: 10
+        genero:
           type: string
-          example: Palo Alto
-        region:
+          example: Literatura clasica
+        autor:
           type: string
-          example: CA
-        zip:
+          example: Sun Tzu
+        editorial:
           type: string
-          example: '94301'
+          example: Alfaguara
       xml:
-        name: address
-    Catalogo:
+        name: book
+    Multimedia:
       type: object
       properties:
-        id:
+        id_multimedia:
+          type: integer
+          format: int64
+          example: 1
+        nombre:
+          type: string
+          example: La casa de papel
+        stock:
+          type: integer
+          format: int64
+          example: 2
+        tipo:
+          type: string
+          description: Tipo de formato multimedia
+          enum:
+            - DVD
+            - CD
+            - Casete
+            - Blueray
+      xml:
+        name: multimedia
+    Catalogue:
+      type: object
+      properties:
+        id_catalogue:
           type: integer
           format: int64
           example: 1
         titulo:
           type: string
           example: Libros
-      xml:
-        name: catalogo
-    Document:
-      required:
-        - name
-        - photoUrls
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          example: 10
-        nombre:
+        filtro:
           type: string
-          example: The art of war
-        stock:
-          type: integer
-          example: 30
+          description: Genero por el cual desea filtrar
+          enum:
+            - Books
+            - Multimedia
+        libro:
+          type: array
+          xml:
+            name: book
+            wrapped: true
+          items:
+            $ref: '#/components/schemas/Book'
+        multimedia:
+          type: array
+          xml:
+            name: multimedia
+            wrapped: true
+          items:
+            $ref: '#/components/schemas/Multimedia'
       xml:
-        name: document
-    ApiResponse:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        type:
-          type: string
-        message:
-          type: string
-      xml:
-        name: '##default'
-  requestBodies:
-    Document:
-      description: Document object that needs to be added to the library
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Document'
-        application/xml:
-          schema:
-            $ref: '#/components/schemas/Document'
-    UserArray:
-      description: List of user object
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/User'
-  securitySchemes:
-    documentlibrary_auth:
-      type: oauth2
-      flows:
-        implicit:
-          authorizationUrl: https://documentlibrary3.swagger.io/oauth/authorize
-          scopes:
-            write:documents: modify documents in your account
-            read:documents: read your documents
-    api_key:
-      type: apiKey
-      name: api_key
-      in: header
+        name: catalogue
